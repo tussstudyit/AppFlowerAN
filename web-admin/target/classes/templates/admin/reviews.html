@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh gia</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css(v=20260617)}">
+</head>
+<body>
+<div class="app-shell">
+    <div th:replace="~{admin/fragments :: sidebar}"></div>
+    <main class="content">
+        <div class="topbar">
+            <div>
+                <h1>Danh gia</h1>
+                <p class="muted">Theo doi noi dung danh gia san pham</p>
+            </div>
+        </div>
+        <div class="message" th:if="${message}" th:text="${message}"></div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th>Ma</th>
+                    <th>San pham</th>
+                    <th>Chi tiet don</th>
+                    <th>Tai khoan</th>
+                    <th>Noi dung</th>
+                    <th>Sao</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="review : ${reviews}">
+                    <td th:text="${review.id}">1</td>
+                    <td th:text="${review.productId}">1</td>
+                    <td th:text="${review.orderDetailId}">1</td>
+                    <td th:text="${review.username}">user</td>
+                    <td th:text="${review.content}">Noi dung</td>
+                    <td th:text="${review.star1 + ' ' + review.star2 + ' ' + review.star3 + ' ' + review.star4 + ' ' + review.star5}">star</td>
+                    <td>
+                        <form th:action="@{/admin/reviews/{id}/delete(id=${review.id})}" method="post">
+                            <button class="btn small danger" type="submit">Xoa</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+</body>
+</html>

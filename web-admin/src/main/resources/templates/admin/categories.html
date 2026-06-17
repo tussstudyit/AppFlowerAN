@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh muc</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css(v=20260617)}">
+</head>
+<body>
+<div class="app-shell">
+    <div th:replace="~{admin/fragments :: sidebar}"></div>
+    <main class="content">
+        <div class="topbar">
+            <div>
+                <h1>Danh muc</h1>
+                <p class="muted">Quan ly nhom san pham</p>
+            </div>
+            <a class="btn secondary" th:href="@{/admin/categories}">Them moi</a>
+        </div>
+
+        <div class="message" th:if="${message}" th:text="${message}"></div>
+
+        <section class="split">
+            <form class="panel form" th:action="@{/admin/categories}" method="post" enctype="multipart/form-data">
+                <h2 th:text="${editingCategory.id == null ? 'Them danh muc' : 'Sua danh muc'}">Them danh muc</h2>
+                <input type="hidden" name="id" th:value="${editingCategory.id}">
+                <label>
+                    Ten danh muc
+                    <input name="name" th:value="${editingCategory.name}" required>
+                </label>
+                <label>
+                    Anh danh muc
+                    <input name="image" type="file" accept="image/*">
+                </label>
+                <button class="btn" type="submit">Luu danh muc</button>
+            </form>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Anh</th>
+                        <th>Ma</th>
+                        <th>Ten danh muc</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="category : ${categories}">
+                        <td>
+                            <img class="thumb" th:if="${category.imageUrl != null}" th:src="${category.imageUrl}" alt="">
+                        </td>
+                        <td th:text="${category.id}">1</td>
+                        <td th:text="${category.name}">Danh muc</td>
+                        <td>
+                            <div class="actions">
+                                <a class="btn small secondary" th:href="@{/admin/categories(editId=${category.id})}">Sua</a>
+                                <form th:action="@{/admin/categories/{id}/delete(id=${category.id})}" method="post">
+                                    <button class="btn small danger" type="submit">Xoa</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css(v=20260617)}">
+</head>
+<body>
+<div class="app-shell">
+    <div th:replace="~{admin/fragments :: sidebar}"></div>
+    <main class="content">
+        <div class="topbar">
+            <div>
+                <h1>Dashboard</h1>
+                <p class="muted">Xin chao, <span th:text="${adminUsername}">admin</span></p>
+            </div>
+        </div>
+
+        <section class="grid">
+            <article class="card">
+                <div class="muted">Tai khoan</div>
+                <div class="stat" th:text="${accountCount}">0</div>
+            </article>
+            <article class="card">
+                <div class="muted">Danh muc</div>
+                <div class="stat" th:text="${categoryCount}">0</div>
+            </article>
+            <article class="card">
+                <div class="muted">San pham</div>
+                <div class="stat" th:text="${productCount}">0</div>
+            </article>
+            <article class="card">
+                <div class="muted">Don hang</div>
+                <div class="stat" th:text="${orderCount}">0</div>
+            </article>
+            <article class="card">
+                <div class="muted">Danh gia</div>
+                <div class="stat" th:text="${reviewCount}">0</div>
+            </article>
+        </section>
+
+        <section class="panel" style="margin-top: 18px;">
+            <h2>Don hang gan day</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Ma don</th>
+                        <th>Khach hang</th>
+                        <th>Tong tien</th>
+                        <th>Thanh toan</th>
+                        <th>Trang thai</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="order : ${recentOrders}">
+                        <td th:text="${order.id}">1</td>
+                        <td th:text="${order.customerName}">Khach hang</td>
+                        <td th:text="${#numbers.formatDecimal(order.total, 1, 'POINT', 0, 'COMMA') + ' ₫'}">0 ₫</td>
+                        <td><span class="status" th:text="${(order.paymentMethod ?: 'COD') + ' - ' + (order.paymentStatus ?: 'UNPAID')}">COD</span></td>
+                        <td><span class="status" th:text="${order.status}">Trang thai</span></td>
+                        <td><a class="btn small secondary" th:href="@{/admin/orders/{id}(id=${order.id})}">Xem</a></td>
+                    </tr>
+                    <tr th:if="${#lists.isEmpty(recentOrders)}">
+                        <td colspan="6" class="muted">Chua co don hang</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

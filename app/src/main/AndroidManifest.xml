@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:usesCleartextTraffic="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Design.Light.NoActionBar"
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.order.ChiTietDonHang_NguoiDung_3_TrangThai_Khac"
+            android:exported="false" />
+        <activity
+            android:name=".ui.payment.VnpayPayment_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.product.TatCaSanPham_Activity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity
+            android:name=".ui.product.DanhGia_SanPham_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.account.TrangCaNhan_admin_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.product.TimKiemSanPham_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.DoiMatKhau_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.product.DanhMucSanPham_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.account.TrangCaNhan_nguoidung_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.order.ChiTietDonHang_NguoiDung_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.cart.GioHang_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.product.ChiTietSanPham_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.TrangchuAdmin_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.DangKiTaiKhoan_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.account.SuaTaiKhoan_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.account.ThemTaiKhoan_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.product.Sanpham_admin_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.product.SuaSanPham_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.account.Taikhoan_admin_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.product.ThemSanPham_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.category.SuaNhomsanpham_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.TrangchuNgdung_Activity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.category.ThemNhomSanPham_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.DangNhap_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.category.Nhomsanpham_admin_Actvity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.order.DonHang_admin_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.order.DonHang_User_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.support.HoTro_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.order.ChiTietDonHang_Admin_Activity"
+     android:exported="false" />
+        <activity
+            android:name=".ui.launch.KhoiDong_Activity"
+
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

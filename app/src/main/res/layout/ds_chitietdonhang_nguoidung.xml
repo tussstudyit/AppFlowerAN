@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/listviewdh"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgsp"
+
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="Hình ảnh sản phẩm"
+            android:layout_marginEnd="16dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID đơn hàng:"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#FF0000"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/txt_Iddathang"
+                    android:textColor="#FF0000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tên sản phẩm:"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#3DBF06"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/txtTensp"
+                    android:textColor="#2FDC00"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:maxLength="21"
+                    android:textAllCaps="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mã sản phẩm:"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/txtMasp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Số lượng:"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/txtSoLuong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Đơn giá:"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/txtGia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+    <!-- Nút Đánh Giá ở góc phải -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Bạn đã đánh giá sản phẩm  này."
+            android:textColor="#FF0000"
+            android:gravity="center"
+            android:id="@+id/textdanhgia"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:text="Đánh giá"
+            android:textColor="#001AAF"
+            android:textSize="16sp"
+            android:id="@+id/btndanhgia"
+            android:backgroundTint="#FFE62D"
+            android:textStyle="bold"
+            app:cornerRadius = "0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

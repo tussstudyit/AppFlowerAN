@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiet don hang</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css(v=20260617)}">
+</head>
+<body>
+<div class="app-shell">
+    <div th:replace="~{admin/fragments :: sidebar}"></div>
+    <main class="content">
+        <div class="topbar">
+            <div>
+                <h1>Don hang #<span th:text="${order.id}">1</span></h1>
+                <p class="muted" th:text="${order.customerName + ' - ' + order.phone}">Khach hang</p>
+            </div>
+            <a class="btn secondary" th:href="@{/admin/orders}">Quay lai</a>
+        </div>
+        <div class="message" th:if="${message}" th:text="${message}"></div>
+
+        <section class="panel">
+            <h2>Thong tin giao hang</h2>
+            <p><strong>Tai khoan:</strong> <span th:text="${order.username}">user</span></p>
+            <p><strong>Dia chi:</strong> <span th:text="${order.address}">dia chi</span></p>
+            <p><strong>Tong tien:</strong> <span th:text="${#numbers.formatDecimal(order.total, 1, 'POINT', 0, 'COMMA') + ' ₫'}">0 ₫</span></p>
+            <p><strong>Phuong thuc thanh toan:</strong> <span th:text="${order.paymentMethod ?: 'COD'}">COD</span></p>
+            <p><strong>Trang thai thanh toan:</strong> <span class="status" th:text="${order.paymentStatus ?: 'UNPAID'}">UNPAID</span></p>
+            <p th:if="${order.vnpTxnRef != null}"><strong>VNPAY TxnRef:</strong> <span th:text="${order.vnpTxnRef}">txn</span></p>
+            <p th:if="${order.vnpTransactionNo != null}"><strong>VNPAY TransactionNo:</strong> <span th:text="${order.vnpTransactionNo}">transaction</span></p>
+            <p th:if="${order.vnpResponseCode != null}"><strong>VNPAY ResponseCode:</strong> <span th:text="${order.vnpResponseCode}">00</span></p>
+            <p th:if="${order.vnpBankCode != null}"><strong>Ngan hang:</strong> <span th:text="${order.vnpBankCode}">NCB</span></p>
+            <form class="actions" th:action="@{/admin/orders/{id}/status(id=${order.id})}" method="post">
+                <select name="status">
+                    <option th:each="status : ${statusOptions}"
+                            th:value="${status}"
+                            th:selected="${status == order.status}"
+                            th:text="${status}">
+                        Trang thai
+                    </option>
+                </select>
+                <button class="btn" type="submit">Cap nhat</button>
+            </form>
+            <form class="actions" style="margin-top: 12px;" th:if="${order.paymentStatus != 'PAID'}" th:action="@{/admin/orders/{id}/vnpay/create(id=${order.id})}" method="post">
+                <button class="btn" type="submit">Thanh toan VNPAY sandbox</button>
+            </form>
+        </section>
+
+        <section style="margin-top: 18px;">
+            <h2>San pham trong don</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Anh</th>
+                        <th>San pham</th>
+                        <th>So luong</th>
+                        <th>Don gia</th>
+                        <th>Tam tinh</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="item : ${order.items}">
+                        <td>
+                            <img class="thumb" th:if="${item.imageUrl != null}" th:src="${item.imageUrl}" alt="">
+                        </td>
+                        <td th:text="${item.product != null ? item.product.name : 'San pham da xoa'}">San pham</td>
+                        <td th:text="${item.quantity}">1</td>
+                        <td th:text="${#numbers.formatDecimal(item.price, 1, 'POINT', 0, 'COMMA') + ' ₫'}">0 ₫</td>
+                        <td th:text="${#numbers.formatDecimal(item.lineTotal, 1, 'POINT', 0, 'COMMA') + ' ₫'}">0 ₫</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

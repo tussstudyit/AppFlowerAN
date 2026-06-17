@@ -1,0 +1,184 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+
+    android:background="#072349"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:gravity="center"
+
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cập nhật đơn hàng"
+                android:textSize="20sp"
+android:textAllCaps="true"
+
+                android:textStyle="bold"
+                android:textColor="#001BC5"
+                android:layout_marginBottom="15dp" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+
+                android:id="@+id/id_dathang"
+                />
+<TextView
+    android:layout_width="wrap_content"
+    android:text="Tên khách hàng"
+    android:layout_gravity="left"
+    android:textStyle="bold"
+    android:textColor="#FF0000"
+    android:layout_height="wrap_content"></TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/txtTenKh"
+                android:background="@drawable/edittext"
+                android:layout_marginBottom="6dp"
+                android:drawablePadding="8dp"
+                android:focusableInTouchMode="false"
+                android:hint="Tên khách hàng"
+                android:padding="8dp"
+                android:textColorHint="#aaa"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="3dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Địa chi giao hàng"
+                android:layout_gravity="left"
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:layout_height="wrap_content"></TextView>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/txtDiaChi"
+                android:focusableInTouchMode="false"
+                android:background="@drawable/edittext"
+                android:layout_marginBottom="2dp"
+                android:drawablePadding="8dp"
+                android:inputType="number"
+                android:hint="Địa chỉ"
+                android:textColorHint="#aaa"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="0dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Số điện thoại"
+                android:layout_gravity="left"
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:layout_height="wrap_content"></TextView>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/txtSdt"
+                android:background="@drawable/edittext"
+                android:focusableInTouchMode="false"
+
+                android:drawablePadding="8dp"
+                android:hint="SĐT"
+                android:padding="8dp"
+                android:textColorHint="#aaa"
+
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Tổng tiền thanh toán"
+                android:layout_gravity="left"
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:layout_height="wrap_content"></TextView>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/txtTongThanhToan"
+                android:background="@drawable/edittext"
+                android:focusableInTouchMode="false"
+                android:drawablePadding="8dp"
+                android:hint="Tổng Thanh Toán"
+                android:padding="8dp"
+                android:textColorHint="#aaa"
+
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Ngày đặt hàng"
+                android:layout_gravity="left"
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:layout_height="wrap_content"></TextView>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/txtNgayDatHang"
+                android:background="@drawable/edittext"
+
+android:focusableInTouchMode="false"
+                android:drawablePadding="8dp"
+                android:hint="Ngày Đặt Hàng"
+                android:textColorHint="#aaa"
+                android:padding="8dp"
+
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Trạng thái đơn hàng"
+                android:layout_gravity="left"
+                android:textStyle="bold"
+                android:textColor="#673AB7"
+                android:layout_height="wrap_content"></TextView>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/txtTrangthai"
+                android:background="@drawable/edittext"
+                android:focusableInTouchMode="false"
+                android:drawablePadding="8dp"
+                android:hint="Trạng Thái"
+                android:textColorHint="#aaa"
+                android:padding="8dp"
+
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="5dp"/>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

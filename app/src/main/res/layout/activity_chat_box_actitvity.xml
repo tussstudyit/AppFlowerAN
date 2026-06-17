@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEF62"
+
+    android:name="android.permission.SYSTEM_ALERT_WINDOW" xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:id="@+id/bo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#072349"
+        android:layout_alignParentTop="true"
+
+
+        android:padding="1dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:backgroundTint="#5FFF62"
+
+            android:layout_height="60dp">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:src="@drawable/ql"
+                android:id="@+id/btnback"
+                android:background="#00AAAAAA"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="13dp"
+                android:layout_height="wrap_content"></ImageButton>
+            <TextView
+                android:layout_marginLeft="80dp"
+                android:layout_weight="9"
+
+                android:fontFamily="sans-serif-condensed-light"
+                android:textStyle="bold"
+                android:textSize="20dp"
+       android:layout_marginTop="15dp"
+                android:text="CHAT TỰ ĐỘNG"
+                android:textColor="#FFFFFF"
+                android:src="@drawable/logo1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"></TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <ListView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:id="@+id/listview"
+        android:background="#FFEF62"
+        android:layout_below="@+id/bo"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="match_parent"></ListView>
+
+
+
+    <!-- Toolbar ở cuối màn hình -->
+    <LinearLayout
+        android:id="@+id/bottomToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:padding="1dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginRight="10dp"
+          >
+            <EditText
+                android:id="@+id/tinnhan"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:paddingLeft="20dp"
+                android:hint="Nhập nội dung ..."
+                android:maxLines="1"
+                android:inputType="text"
+                android:imeOptions="actionSend"
+                android:singleLine="true" /> <!-- Thêm thuộc tính này -->     <ImageButton
+           android:layout_width="wrap_content"
+           android:id="@+id/btnsend"
+           android:src="@drawable/send"
+           android:backgroundTint="@color/white"
+           android:layout_height="wrap_content">
+
+       </ImageButton>
+        </LinearLayout>
+
+    </LinearLayout>
+
+<TextView
+    android:layout_width="0dp"
+    android:id="@+id/tendn"
+    android:layout_height="0dp"></TextView>
+</RelativeLayout>
