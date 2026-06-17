@@ -134,9 +134,6 @@ Backend da cau hinh VNPAY sandbox trong `src/main/resources/application.properti
 
 Thong tin dang dung:
 
-- `vnp_TmnCode`: doc tu `VNPAY_TMN_CODE`, mac dinh `GW923J6D`
-- `vnp_HashSecret`: doc tu `VNPAY_HASH_SECRET`
-- `vnp_Url`: doc tu `VNPAY_PAY_URL`, mac dinh `https://sandbox.vnpayment.vn/paymentv2/vpcpay.html`
 - Return URL mac dinh: `http://localhost:8080/api/payments/vnpay/return`
 - IPN URL mac dinh: `http://localhost:8080/api/payments/vnpay/ipn`
 
