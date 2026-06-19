@@ -99,7 +99,6 @@ CREATE TABLE `DanhGia` (
 
 SET FOREIGN_KEY_CHECKS = 0;
 INSERT INTO `taikhoan` (`tendn`, `matkhau`, `quyen`) VALUES ('admin', '1234', 'admin');
-INSERT INTO `taikhoan` (`tendn`, `matkhau`, `quyen`) VALUES ('nguyendt', '123', 'user');
 INSERT INTO `taikhoan` (`tendn`, `matkhau`, `quyen`) VALUES ('khang', '111', 'user');
 INSERT INTO `taikhoan` (`tendn`, `matkhau`, `quyen`) VALUES ('linh', '111', 'user');
 INSERT INTO `taikhoan` (`tendn`, `matkhau`, `quyen`) VALUES ('bac', '111', 'user');
