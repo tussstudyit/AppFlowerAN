@@ -3,8 +3,10 @@ package com.example.appshopbanhang.core.network;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.appshopbanhang.BuildConfig;
+
 public final class ApiConfig {
-    public static final String DEFAULT_BASE_URL = "http://10.0.2.2:8080";
+    public static final String DEFAULT_BASE_URL = BuildConfig.API_BASE_URL;
     private static final String PREFS_NAME = "ApiConfig";
     private static final String KEY_BASE_URL = "baseUrl";
     private static volatile String baseUrl = DEFAULT_BASE_URL;
